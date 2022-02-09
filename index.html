@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>FCC Survey</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="grab.css">
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" defer></script>
+  <script src="./bundle.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">FCC Survey Form</h1>
+    <p id="description">
+      Thanks for taking time to help us improve our website
+    </p>
+  </header>
+  <div class="form-container">
+    <form action="POST" id="survey-form">
+      <div class="input-grp">
+        <label for="name" id="name-label">
+          Name <span style="color: red;">*</span>
+        </label>
+        <input type="text" id="name" required placeholder="your name" />
+        <br>
+        <label for="email" id="email-label">E-mail
+        </label>
+        <input type="email" name="" id="email" placeholder="user@gmail.com" required />
+        <br>
+        <label for="number" id="number-label">
+          Number
+        </label>
+        <input type="number" name="" id="number" max="99" min='9999999999' placeholder="phone number" minlength="10"
+          maxlength="13" />
+        <br>
+      </div>
+
+      <p class="p-tag">Which option best describes your current role?</p>
+      <select name="" id="dropdown">
+        <option value="" disabled>Select your position</option>
+        <option value="">Student</option>
+        <option value="">Full time job</option>
+        <option value="">Freelancer</option>
+        <option value="">Other</option>
+      </select>
+      <div class="radio-group">
+        <p class="p-tag">Recommend as site for what type of student</p>
+
+        <label for="">
+          <input type="radio" name="recommendation" id="radio" value="Beginner" />
+          Beginner</label>
+        <label for="">
+          <input type="radio" name="recommendation" id="" value="Experimented" />
+          Experimented</label>
+        <label for="">
+          <input type="radio" name="recommendation" id="" value="Advanced" />
+          Advanced</label>
+        <label for="">
+          <input type="radio" name="recommendation" id="" value="everybody" />
+          Everybody</label>
+      </div>
+      <div class="checkbox-grp">
+        <p class="p-tag">We can do better</p>
+        <label for=""> <input type="checkbox" name="" id="" value="mail-list" />Add to mailing list
+        </label>
+        <label for=""> <input type="checkbox" name="" id="" value="cookies" />
+          Accept cookies</label>
+        <label for=""> <input type="checkbox" name="" id="" value="data-coll" />
+          User data collections</label>
+        <p class="p-tag">Any suggestion or issues</p>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit" id='submit' value="Submit" />
+
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
