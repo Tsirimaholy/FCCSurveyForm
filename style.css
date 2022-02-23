@@ -1,27 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Nunito:wght@300&family=Quicksand:wght@500&family=Rubik:ital@1&display=swap");
-
+:root {
+  --soft-grey: rgb(209, 209, 209);
+  --soft-shadow:2px 2px 10px black;
+}
 body {
-  background-image: url(images/backgroundimg.png);
-  color: white;
   padding-left: 4em;
   padding-right: 4em;
   font-family: "Inconsolata", monospace;
-  font-family: "Nunito", sans-serif;
-  font-family: "Quicksand", sans-serif;
-  font-family: "Rubik", sans-serif;
 }
 
 #title {
   text-align: center;
-  font-family: "Nunito", sans-serif;
 }
 
 #survey-form {
-  box-shadow: 2px 2px 10px #fe1412;
-  background-color: rgb(37, 35, 35);
   padding: 4em;
-  width: fit-content;
   opacity: 0.88;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -29,6 +23,11 @@ body {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
+
+#survey-form:focus-within{
+  box-shadow: var(--soft-shadow);
+}
+
 label {
   margin-bottom: 1.5em;
 }
@@ -36,27 +35,19 @@ input {
   margin: 1rem;
   height: 2rem;
   padding-left: 1em;
-  background: rgb(78, 77, 77);
-  color: gray;
-  font-size: 24px;
-  font-weight: 400;
+  background: var(--soft-grey);
   border: 0;
-  border-radius: 7px;
+  border-radius: 4px;
   transition: padding 0.45s;
-  -webkit-transition: padding 0.45s;
-  -moz-transition: padding 0.45s;
-  -ms-transition: padding 0.45s;
-  -o-transition: padding 0.45s;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
-input:focus {
-  padding: 5px 10px;
-  outline: none;
-  text-align: center;
+.input-grp{
+  display: block;
 }
+
 #description {
   margin-left: 2em;
   font-size: larger;
@@ -73,25 +64,9 @@ input:focus {
   margin-bottom: 0;
 }
 input[type="radio"] {
-  border: 1px solid red;
-  appearance: none !important;
-  background-color: black;
-  background-position: center;
-  background-size: contain;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  /* border-radius: 50%; */
   width: 1em;
   height: 1em;
-}
-input:checked {
-  background-color: white;
-  background-image: url(./images/check_circle.svg);
-  border: none;
-  background-position: center;
-  padding: 0.6em;
 }
 
 input[type="checkbox"] {
@@ -103,26 +78,15 @@ input[type="checkbox"] {
 } */
 #dropdown {
   border: none;
-  background: #444444;
-  width: fit-content;
+  background-color: var(--soft-grey);
   height: 2em;
-  font-size: large;
+  /*font-size: large;
   padding-left: 5px;
-  border-radius: 5px;
+  */border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  -webkit-transition: 2s;
-  -moz-transition: 2s;
-  -ms-transition: 2s;
-  -o-transition: 2s;
-}
-#dropdown:focus {
-  outline: none;
-}
-option {
-  outline: none;
 }
 
 textarea {
@@ -152,27 +116,15 @@ textarea:focus {
   -ms-transform: scale(1.01);
   -o-transform: scale(1.01);
   animation-name: color-change;
-    animation-timing-function: ease-in;
-    animation-duration: 3s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-}
-
-#submit {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fe1412;
-  /* color: white; */
+  animation-timing-function: ease-in;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
 }
 
 .p-tag {
   font-weight: bolder;
   text-decoration: dotted;
-}
-.p-tag::before {
-  content: "";
 }
 
 @media screen and (max-width: 648px) {
@@ -198,20 +150,20 @@ textarea:focus {
     animation-iteration-count: infinite;
   }
 
-@keyframes color-change {
-  0%{
-    box-shadow: 1px 1px 10px 5px#fe1412;
+  @keyframes color-change {
+    0% {
+      box-shadow: 1px 1px 10px 5px#fe1412;
+    }
+    20% {
+      box-shadow: 1px 1px 10px 5px#d64e4c;
+    }
+    60% {
+      box-shadow: 1px 1px 10px 5px#580e0c;
+    }
+    90% {
+      box-shadow: 1px 1px 10px 5px#ac3f3c;
+    }
   }
-  20%{
-    box-shadow: 1px 1px 10px 5px#d64e4c;
-  }
-  60%{
-    box-shadow: 1px 1px 10px 5px#580e0c;
-  }
-  90%{
-    box-shadow: 1px 1px 10px 5px#ac3f3c;
-  }
-}
   .form-container > form {
     width: fit-content;
     border-radius: 0;
