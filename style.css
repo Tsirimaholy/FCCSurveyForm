@@ -174,4 +174,10 @@ textarea:focus {
   .checkbox-grp{
     border: none;
   }
+  
+  #textarea{
+    width: 80%;
+    display: block;
+    margin: auto;
+  }
 }
