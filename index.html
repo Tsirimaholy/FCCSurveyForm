@@ -20,7 +20,7 @@
     </p>
   </header>
   <div class="form-container">
-    <form action="POST" id="survey-form">
+    <form method="POST" id="survey-form" action="#">
       <div class="input-grp">
         <label for="name" id="name-label">
           Name *
@@ -28,17 +28,17 @@
         </label>
         <label for="email" id="email-label">
           E-mail
-          <input type="email" name="" id="email" placeholder="user@gmail.com" required />
+          <input type="email" id="email" placeholder="user@gmail.com" required />
         </label>
         <label for="number" id="number-label">
           Number
-          <input type="number" name="" id="number" placeholder="phone number" min="0" max="9999999999" />
+          <input type="number" id="number" placeholder="phone number" min="0" max="9999999999" />
         </label>
       </div>
 
       <div class="role">
         <p class="p-tag">Which option best describes your current role?</p>
-        <select name="" id="dropdown">
+        <select id="dropdown">
           <option value="" disabled>Select your position</option>
           <option value="">Student</option>
           <option value="">Full time job</option>
@@ -50,32 +50,36 @@
       <div class="ckecking">
         <div class="radio-group">
           <p class="p-tag">Recommend as site for what type of student</p>
-          <label for="">
+          <label for="radio">
             <input type="radio" name="recommendation" id="radio" value="Beginner" />
-            Beginner</label>
-          <label for="">
-            <input type="radio" name="recommendation" id="" value="Experimented" />
+            Beginner
+          </label>
+          <label for="recommendation-0">
+            <input type="radio" name="recommendation" id="recommendation-0" value="Experimented" />
             Experimented</label>
-          <label for="">
-            <input type="radio" name="recommendation" id="" value="Advanced" />
+          <label for="recommendation-1">
+            <input type="radio" name="recommendation" id="recommendation-1" value=" Advanced" />
             Advanced</label>
-          <label for="">
-            <input type="radio" name="recommendation" id="" value="everybody" />
+          <label for="recommendation-3">
+            <input type="radio" name="recommendation" id="recommendation-3" value="everybody" />
             Everybody</label>
         </div>
         <div class="checkbox-grp">
           <p class="p-tag">We can do better</p>
-          <label for=""> <input type="checkbox" name="" id="" value="mail-list" />Add to mailing list
+          <label for="mail"> 
+            <input type="checkbox" id="mail" value="mail-list" />
+            Add to mailing list
           </label>
-          <label for=""> <input type="checkbox" name="" id="" value="cookies" />
+          <label for="cookies"> <input type="checkbox" id="cookies" value="cookies" />
             Accept cookies</label>
-          <label for=""> <input type="checkbox" name="" id="" value="data-coll" />
+          <label for="data-collection"> 
+            <input type="checkbox" id="data-collection" value="data-coll" />
             User data collections</label>
         </div>
       </div>
       <div class="end">
         <p class="p-tag">Any suggestion or issues</p>
-        <textarea name="" id="" cols="30" rows="7"></textarea>
+        <textarea id="textarea" cols="30" rows="7" placeholder="comment down ..."></textarea>
         <input type="submit" id='submit' value="Submit" />
       </div>
     </form>

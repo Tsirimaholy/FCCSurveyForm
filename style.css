@@ -3,14 +3,16 @@
 :root {
   --soft-grey: rgb(209, 209, 209);
   --soft-grey-2: rgb(194, 193, 193);
-  --soft-shadow: 2px 2px 10px black;
+  --soft-shadow: 2px 2px 10px var(--primary-color);
+  --primary-color: salmon;
+  --secondary-color: #ffe4c4;
 }
 
 body {
   padding-left: 4em;
   padding-right: 4em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background: linear-gradient(45deg, #ffe4c4, transparent);
+  background: linear-gradient(45deg, var(--secondary-color), transparent);
 }
 
 header {
@@ -40,15 +42,19 @@ input[type="radio"]:hover {
   cursor: pointer;
 }
 .input-grp input {
+  background-color: var(--secondary-color);
   margin: 1rem;
   height: 2rem;
   padding-left: 1em;
-  background: var(--soft-grey);
   border: 0;
   border-radius: 4px;
+  color: maroon;
+  transition: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition-duration: 0.2s;
 }
 .input-grp input:focus {
-  background-color: var(--soft-grey-2);
+  transform: scale(1.02);
+  outline: 2px solid var(--primary-color);
 }
 .input-grp {
   display: block;
@@ -64,12 +70,10 @@ input[type="radio"]:hover {
 }
 
 #dropdown {
-  border: none;
-  background-color: var(--soft-grey);
+  color: maroon;
+  border: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
   height: 2em;
-  /*font-size: large;
-  padding-left: 5px;
-  */
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -82,14 +86,14 @@ input[type="radio"]:hover {
   margin-top: 2rem;
   display: flex;
   justify-content: space-evenly;
-  border: 2px solid salmon;
-  background-color: bisque;
+  border: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
 }
 .ckecking > * {
   padding: 1em;
 }
 .checkbox-grp {
-  border-left: 2px solid salmon;
+  border-left: 2px solid var(--primary-color);
 }
 .radio-group label,
 .checkbox-grp label {
@@ -108,12 +112,17 @@ textarea {
   outline: none;
   padding: 1em;
   font-size: large;
-  background-color: var(--soft-grey);
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  transition: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition-duration: 0.2s;
 }
 textarea:focus {
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
-
+.role{
+  margin-top: 3em;
+}
 .p-tag {
   font-weight: bolder;
   text-decoration: dotted;
@@ -125,10 +134,44 @@ textarea:focus {
 #submit {
   background: salmon;
   border: 0;
-  padding: 1em;
+  padding: 1em 2em ;
   color: white;
   font-weight: bold;
   display: block;
   margin: auto;
   margin-top: 2em;
+  box-shadow: var(--soft-shadow);
+  transition: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition-duration: 0.2s;
+}
+
+#submit:active{
+  transform: scale(1.05);
+}
+
+
+@media screen and (min-width:375px) and (max-width:812px){
+  
+  body{
+    padding: 0;
+  }
+  #survey-form{
+    padding: 0;
+  }
+
+  /* input */
+  .input-grp input{
+    display: block;
+    width: 50%;
+  }
+
+  .ckecking{
+    flex-wrap: wrap;
+    justify-content: left;
+    border: none;
+    width: 100%;
+  }
+  .checkbox-grp{
+    border: none;
+  }
 }
