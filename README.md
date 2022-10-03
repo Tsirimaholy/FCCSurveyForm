@@ -1,2 +1,2 @@
 ﻿# FCC-Survey-form
-This is one of FCC curriculum
+This is a simple survey form
